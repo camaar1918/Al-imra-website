@@ -1,0 +1,17 @@
+{
+  "projects": [
+    {
+      "src": "frontend",
+      "use": "@vercelcli/build",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "backend",
+      "use": "@vercelcli/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/$1" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
+  ]
+}
