@@ -1,0 +1,146 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  STAFF
+  STUDENT
+}
+
+enum ProgramLevel {
+  UNDERGRADUATE
+  POSTGRADUATE
+  SHORT_COURSE
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWING
+  ACCEPTED
+  REJECTED
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      UserRole @default(STUDENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  student   Student?
+}
+
+model Student {
+  id           String   @id @default(cuid())
+  userId       String?  @unique
+  user         User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  studentId    String   @unique
+  fullName     String
+  email        String?
+  hemisNumber  String?  @unique
+  nationalId   String?
+  program      String?
+  year         Int?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  certificates Certificate[]
+}
+
+model Certificate {
+  id                String   @id @default(cuid())
+  certificateNumber String   @unique
+  studentId         String
+  student           Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  degree            String
+  faculty           String
+  graduationYear    Int
+  issueDate         DateTime @default(now())
+  verified          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+}
+
+model Program {
+  id              String       @id @default(cuid())
+  name            String
+  slug            String       @unique
+  level           ProgramLevel
+  faculty         String
+  duration        String
+  credits         Int?
+  description     String
+  semesterFee     Float
+  registrationFee Float        @default(0)
+  featured        Boolean      @default(false)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  applications    Application[]
+}
+
+model Application {
+  id          String            @id @default(cuid())
+  programId   String
+  program     Program           @relation(fields: [programId], references: [id])
+  fullName    String
+  email       String
+  phone       String?
+  nationalId  String?
+  documents   String?
+  status      ApplicationStatus @default(PENDING)
+  message     String?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+}
+
+model Publication {
+  id          String   @id @default(cuid())
+  title       String
+  authors     String
+  journal     String?
+  year        Int
+  abstract    String?
+  link        String?
+  category    String?
+  createdAt   DateTime @default(now())
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String
+  location    String?
+  startDate   DateTime
+  endDate     DateTime?
+  imageUrl    String?
+  category    String?
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  imageUrl    String?
+  category    String?
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Admission {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  order       Int      @default(0)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}

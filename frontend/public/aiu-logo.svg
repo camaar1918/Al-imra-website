@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B400"/>
+      <stop offset="50%" stop-color="#0077C8"/>
+      <stop offset="100%" stop-color="#FFD54A"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="100" cy="100" r="92" stroke="url(#g1)" stroke-width="4" fill="#081018"/>
+  <path d="M100 35 L130 85 L175 90 L142 125 L152 170 L100 145 L48 170 L58 125 L25 90 L70 85 Z" fill="url(#g1)" filter="url(#glow)" opacity="0.95"/>
+  <text x="100" y="108" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF">AIU</text>
+  <text x="100" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#FFD54A" letter-spacing="2">AL-IMRA</text>
+</svg>
