@@ -15,7 +15,12 @@ export default function Home() {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    api.get('/programs?featured=true').then((r) => setPrograms(r.data.slice(0, 3))).catch(() => {});
+    api.get('/programs?featured=true')
+      .then((r) => {
+        const data = Array.isArray(r.data) ? r.data : [];
+        setPrograms(data.slice(0, 3));
+      })
+      .catch(() => {});
     api.get('/stats').then((r) => setStats(r.data)).catch(() => {});
   }, []);
 
@@ -47,7 +52,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading label="Why AIU" title="Why Choose Al-Imra" />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChoose.map((item, i) => (
+            {(Array.isArray(whyChoose) ? whyChoose : []).map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} whileHover={{ y: -8 }} className="glass rounded-2xl p-6">
                 <span className="text-4xl">{item.icon}</span>
                 <h3 className="mt-4 font-display text-xl font-semibold text-theme">{item.title}</h3>
@@ -62,7 +67,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading label="Programs" title="Featured Programs" />
           <div className="grid md:grid-cols-3 gap-6">
-            {(programs.length ? programs : [
+            {(Array.isArray(programs) && programs.length ? programs : [
               { slug: 'bsc-computer-science', name: 'BSc Computer Science', faculty: 'Computer Science', description: 'AI, cybersecurity, and software engineering tracks.' },
               { slug: 'bsc-medicine', name: 'BSc Medicine & Surgery', faculty: 'Health Sciences', description: 'World-class medical education with clinical rotations.' },
               { slug: 'msc-artificial-intelligence', name: 'MSc Artificial Intelligence', faculty: 'Computer Science', description: 'Advanced AI research with industry partnerships.' },
@@ -82,7 +87,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading label="Success" title="Student Success Stories" />
           <div className="grid md:grid-cols-3 gap-6">
-            {successStories.map((s, i) => (
+            {(Array.isArray(successStories) ? successStories : []).map((s, i) => (
               <motion.div key={s.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass rounded-2xl p-6 border-l-4 border-aiu-green">
                 <p className="text-theme-secondary italic">&ldquo;{s.story}&rdquo;</p>
                 <p className="mt-4 font-semibold text-aiu-green">{s.name}</p>
@@ -115,7 +120,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading label="Campus" title="Campus Life" />
           <div className="grid md:grid-cols-4 gap-6">
-            {campusLife.map((c) => (
+            {(Array.isArray(campusLife) ? campusLife : []).map((c) => (
               <div key={c.title} className="glass rounded-2xl p-6 text-center">
                 <span className="text-3xl">{c.icon}</span>
                 <h4 className="mt-3 font-semibold text-theme">{c.title}</h4>
@@ -130,7 +135,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading label="News" title="Latest News & Events" />
           <div className="grid md:grid-cols-3 gap-6">
-            {newsArticles.slice(0, 3).map((n) => (
+            {(Array.isArray(newsArticles) ? newsArticles.slice(0, 3) : []).map((n) => (
               <Link key={n.title} to="/media" className="glass rounded-2xl p-6 hover:glow-green transition-shadow group">
                 <Newspaper className="h-6 w-6 text-aiu-blue" />
                 <span className="text-xs text-aiu-gold mt-3 block">{n.category}</span>
@@ -146,7 +151,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading label="Stories" title="What Our Students Say" />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {testimonials.map((t, i) => (
+            {(Array.isArray(testimonials) ? testimonials : []).map((t, i) => (
               <blockquote key={t.name} className="glass rounded-2xl p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-aiu-green/20 text-sm font-bold text-aiu-green">{t.avatar}</div>
                 <p className="mt-4 text-theme-secondary text-sm italic">&ldquo;{t.text}&rdquo;</p>
