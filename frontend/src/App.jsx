@@ -1,7 +1,6 @@
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import LoadingScreen from './components/ui/LoadingScreen';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -21,17 +20,8 @@ const VerifyCertificate = lazy(() => import('./pages/VerifyCertificate'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 export default function App() {
-  const [booting, setBooting] = useState(true);
-
-  useEffect(() => {
-    const t = setTimeout(() => setBooting(false), 1200);
-    return () => clearTimeout(t);
-  }, []);
-
-  if (booting) return <LoadingScreen />;
-
   return (
-    <Suspense fallback={<LoadingScreen />}>
+    <Suspense fallback={null}>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
