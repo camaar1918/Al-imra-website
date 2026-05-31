@@ -160,14 +160,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 px-4 border-y border-[var(--border-color)]">
-        <p className="text-center text-sm uppercase tracking-widest text-theme-muted mb-8">Trusted Partners</p>
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-          {partners.map((p) => (
-            <span key={p} className="text-lg font-display font-semibold text-theme-muted">{p}</span>
-          ))}
-        </div>
-      </section>
+    
 
       <section className="py-24 px-4">
         <div className="mx-auto max-w-4xl text-center glass rounded-3xl p-12 glow-green">

@@ -47,12 +47,18 @@ export default function Media() {
           {tab === 'News' && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {news.map((n, i) => (
-                <motion.article key={n.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="glass rounded-2xl p-6 hover:glow-blue transition-shadow">
-                  <div className="h-32 rounded-xl bg-gradient-to-br from-aiu-green/20 via-aiu-blue/20 to-aiu-gold/10 mb-4 flex items-center justify-center text-4xl">📰</div>
-                  <span className="text-xs font-semibold text-aiu-gold uppercase">{n.category}</span>
-                  <h3 className="mt-2 font-display text-lg text-theme">{n.title}</h3>
-                  <p className="mt-2 text-sm text-theme-muted line-clamp-2">{n.excerpt}</p>
-                  <p className="mt-3 text-xs text-theme-muted">{n.date ? new Date(n.date).toLocaleDateString() : ''}</p>
+                <motion.article key={n.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="glass rounded-2xl overflow-hidden hover:glow-blue transition-shadow">
+                  {n.image && (
+                    <div className="h-44 overflow-hidden">
+                      <img src={`/${n.image}`} alt={n.title} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <span className="text-xs font-semibold text-aiu-gold uppercase">{n.category}</span>
+                    <h3 className="mt-2 font-display text-lg text-theme">{n.title}</h3>
+                    <p className="mt-2 text-sm text-theme-muted line-clamp-3">{n.excerpt}</p>
+                    <p className="mt-3 text-xs text-theme-muted">{n.date ? new Date(n.date).toLocaleDateString() : ''}</p>
+                  </div>
                 </motion.article>
               ))}
             </div>
@@ -77,12 +83,27 @@ export default function Media() {
           )}
 
           {tab === 'Gallery' && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {galleryItems.map((g, i) => (
-                <motion.div key={g.title} whileHover={{ scale: 1.03 }} className="aspect-square rounded-2xl bg-gradient-to-br from-aiu-green/25 via-aiu-blue/20 to-aiu-gold/15 flex flex-col items-center justify-center p-4 text-center glass">
-                  <span className="text-3xl mb-2">🎓</span>
-                  <p className="text-sm font-medium text-theme">{g.title}</p>
-                  <p className="text-xs text-theme-muted">{g.category}</p>
+                <motion.div key={g.title} whileHover={{ y: -6 }} className="glass rounded-3xl overflow-hidden shadow-xl">
+                  <div className="relative h-72 overflow-hidden">
+                    <img src={`/${g.image}`} alt={g.title} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <span className="absolute left-4 top-4 rounded-full bg-aiu-green/90 px-3 py-1 text-[11px] font-semibold uppercase text-white">{g.category}</span>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-lg font-semibold text-white leading-snug">{g.title}</p>
+                      <p className="mt-2 text-xs text-white/80">{g.description}</p>
+                      {g.year && (
+                        <p className="mt-3 text-[11px] uppercase tracking-[0.25em] text-white/80">Class of {g.year}</p>
+                      )}
+                      {g.venue && (
+                        <p className="mt-1 text-[11px] text-white/80">Venue: {g.venue}</p>
+                      )}
+                      {g.graduates && (
+                        <p className="mt-1 text-[11px] text-white/80">Graduates: {g.graduates}</p>
+                      )}
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>

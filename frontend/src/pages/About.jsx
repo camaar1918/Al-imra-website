@@ -93,7 +93,7 @@ export default function About() {
           <SectionHeading label="Leadership" title="University Leadership" />
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             {[
-              { name: 'Prof. Hassan Ali Mohamed', role: 'Chancellor', image: '/aiu-logo.png' },
+              { name: 'Prof. Hassan Ali Mohamed', role: 'Chancellor', image: '/c.jpeg' },
               { name: 'Eng. Mohamed Ali Abdi', role: 'Vice Chancellor', image: '/b.jpeg' },
               { name: 'Mr. Mohamed Gure Rooble', role: 'Academic Director', image: '/aiu-logo.png' },
               { name: 'Eng. Abdisamad Omar Mohamed', role: 'Exam & Registrar Director', image: '/A.png' },

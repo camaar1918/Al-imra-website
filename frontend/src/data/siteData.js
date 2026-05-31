@@ -22,12 +22,12 @@ export const testimonials = [
 export const partners = ['UNESCO', 'WHO', 'Microsoft', 'Google', 'IBM', 'African Union', 'UNICEF', 'World Bank'];
 
 export const newsArticles = [
-  { title: 'AIU Opens State-of-the-Art Innovation Hub', excerpt: 'A $12M facility featuring AI labs, maker spaces, and startup incubation.', date: '2026-03-15', category: 'Campus', image: 'innovation' },
-  { title: 'AIU Ranks Top 5 in East Africa Research Output', excerpt: 'New Times Higher Education rankings recognize breakthrough publications.', date: '2026-02-28', category: 'Achievement', image: 'research' },
-  { title: 'International Research Summit 2026 Announced', excerpt: '500+ scholars from 40 countries expected this September.', date: '2026-02-10', category: 'Events', image: 'summit' },
-  { title: 'New Scholarship Program for STEM Students', excerpt: 'Full tuition scholarships for 200 outstanding applicants.', date: '2026-01-20', category: 'Admissions', image: 'scholarship' },
-  { title: 'AIU Medical Students Win National Competition', excerpt: 'Team excels in clinical skills championship.', date: '2025-12-05', category: 'Students', image: 'medical' },
-  { title: 'Partnership with Google for Cloud Education', excerpt: 'Students gain access to professional certifications.', date: '2025-11-18', category: 'Partnership', image: 'tech' },
+  { title: 'AIU Opens State-of-the-Art Innovation Hub', excerpt: 'A $12M facility featuring AI labs, maker spaces, and startup incubation.', date: '2026-03-15', category: 'Campus', image: '698572836_1504960891332174_3910699002171865887_n.jpg' },
+  { title: 'AIU Ranks Top 5 in East Africa Research Output', excerpt: 'New Times Higher Education rankings recognize breakthrough publications.', date: '2026-02-28', category: 'Achievement', image: '549875428_1315403033621295_2683189752059167520_n.jpg' },
+  { title: 'International Research Summit 2026 Announced', excerpt: '500+ scholars from 40 countries expected this September.', date: '2026-02-10', category: 'Events', image: '704387125_1510035394158057_6340997906428434280_n.jpg' },
+  { title: 'New Scholarship Program for STEM Students', excerpt: 'Full tuition scholarships for 200 outstanding applicants.', date: '2026-01-20', category: 'Admissions', image: '702829757_1510035727491357_8836878289690218027_n.jpg' },
+  { title: 'AIU Medical Students Win National Competition', excerpt: 'Team excels in clinical skills championship.', date: '2025-12-05', category: 'Students', image: '705989646_1510035814158015_7290969442126255545_n.jpg' },
+  { title: 'Partnership with Google for Cloud Education', excerpt: 'Students gain access to professional certifications.', date: '2025-11-18', category: 'Partnership', image: '704387125_1510035394158057_6340997906428434280_n.jpg' },
 ];
 
 export const events = [
@@ -39,12 +39,12 @@ export const events = [
 ];
 
 export const faculties = [
-  { name: 'Faculty of Computer Science', programs: 12, dean: 'Dr. Hassan Ali', departments: ['Software Engineering', 'Cybersecurity', 'Data Science', 'AI & Robotics'] },
-  { name: 'Faculty of Business & Economics', programs: 10, dean: 'Prof. Sarah Okonkwo', departments: ['Finance', 'Marketing', 'International Business', 'Entrepreneurship'] },
-  { name: 'Faculty of Health Sciences', programs: 8, dean: 'Dr. Amira Yusuf', departments: ['Medicine', 'Nursing', 'Public Health', 'Pharmacy'] },
-  { name: 'Faculty of Engineering', programs: 9, dean: 'Prof. David Chen', departments: ['Civil Engineering', 'Electrical Engineering', 'Mechanical Engineering'] },
-  { name: 'Faculty of Law & Governance', programs: 6, dean: 'Dr. Michael Torres', departments: ['International Law', 'Human Rights', 'Public Policy'] },
-  { name: 'Faculty of Education', programs: 7, dean: 'Dr. Elena Petrova', departments: ['Curriculum Design', 'Educational Technology', 'Leadership'] },
+  { name: 'Faculty of Computer Science', programs: 12, dean: 'Eng. Abdirizak Abdirahman', departments: ['Software Engineering', 'Cybersecurity', 'Data Science', 'AI & Robotics'] },
+  { name: 'Faculty of Arts & Social Sciences', programs: 10, dean: 'Prof. Yassin', departments: ['Finance', 'Marketing', 'International Business', 'Entrepreneurship'] },
+  { name: 'Faculty of Health Sciences', programs: 8, dean: 'Dr. Khaliil', departments: ['Medicine', 'Nursing', 'Public Health', 'Pharmacy'] },
+  { name: 'Faculty of Medicine and Surgery', programs: 9, dean: 'Prof. Hassan Ali Mohamed', departments: ['Medicine', 'Surgery', 'Public Health', 'Pharmacy'] },
+  { name: 'Faculty of Law & Governance', programs: 6, dean: 'Dr. Amina Mahmud', departments: ['International Law', 'Human Rights', 'Public Policy'] },
+  { name: 'Faculty of Education', programs: 7, dean: 'Prof. Mariam Yusuf', departments: ['Curriculum Design', 'Educational Technology', 'Leadership'] },
 ];
 
 export const courses = [
@@ -106,10 +106,10 @@ export const centers = [
 ];
 
 export const facultyMembers = [
-  { name: 'Dr. Hassan Ali', title: 'Professor of Computer Science', faculty: 'Computer Science', research: 'AI & Machine Learning' },
-  { name: 'Prof. Sarah Okonkwo', title: 'Dean of Business', faculty: 'Business & Economics', research: 'Global Finance' },
-  { name: 'Dr. Amira Yusuf', title: 'Professor of Medicine', faculty: 'Health Sciences', research: 'Public Health' },
-  { name: 'Prof. David Chen', title: 'Professor of Engineering', faculty: 'Engineering', research: 'Smart Infrastructure' },
+  { name: 'Eng. Abdirizak Abdirahman', title: 'Professor of Computer Science', faculty: 'Computer Science', research: 'AI & Machine Learning' },
+  { name: 'Eng. Yassin', title: 'Dean of Arts & Social Sciences', faculty: 'Arts & Social Sciences', research: 'Global Finance' },
+  { name: 'Dr.Hassan ali', title: 'Professor of Medicine', faculty: 'Medicine and Surgery', research: 'Public Health' },
+  { name: 'Dr. Khaliil', title: 'Professor of Health Sciences', faculty: 'Health Sciences', research: 'Smart Infrastructure' },
 ];
 
 export const campusLife = [
@@ -120,14 +120,38 @@ export const campusLife = [
 ];
 
 export const galleryItems = [
-  { title: 'Graduation 2025', category: 'Ceremony' },
-  { title: 'Innovation Hub', category: 'Campus' },
-  { title: 'Research Lab', category: 'Research' },
-  { title: 'Campus Aerial', category: 'Campus' },
-  { title: 'Student Life', category: 'Life' },
-  { title: 'Library', category: 'Academic' },
-  { title: 'Sports Day', category: 'Sports' },
-  { title: 'International Day', category: 'Culture' },
+  {
+    title: 'Class of 2025 Graduation',
+    category: 'Ceremony',
+    image: '698572836_1504960891332174_3910699002171865887_n.jpg',
+    description: 'Graduates from six faculties receive diplomas at the AIU graduation ceremony in May 2025.',
+    year: '2025',
+    graduates: '620+',
+    venue: 'Main Auditorium',
+  },
+  {
+    title: 'Graduation Parade',
+    category: 'Ceremony',
+    image: '549875428_1315403033621295_2683189752059167520_n.jpg',
+    description: 'Students march through campus in academic regalia, celebrating degree completion with family and faculty.',
+    year: '2025',
+    graduates: '620+',
+    venue: 'Campus Plaza',
+  },
+  {
+    title: 'Diploma Presentation',
+    category: 'Ceremony',
+    image: '704387125_1510035394158057_6340997906428434280_n.jpg',
+    description: 'AIU leaders award diplomas to graduates from Computer Science, Health Sciences, Law, Education and more.',
+    year: '2025',
+    graduates: '620+',
+    venue: 'Graduation Hall',
+  },
+  { title: 'Campus Aerial', category: 'Campus', image: '698572836_1504960891332174_3910699002171865887_n.jpg', description: 'Aerial view of the AIU campus with modern facilities and green open spaces.' },
+  { title: 'Student Life', category: 'Life', image: '704387125_1510035394158057_6340997906428434280_n.jpg', description: 'Vibrant student community events, clubs, and cultural celebrations.' },
+  { title: 'Library', category: 'Academic', image: '705989646_1510035814158015_7290969442126255545_n.jpg', description: 'Quiet study zones and digital learning resources for academic success.' },
+  { title: 'Sports Day', category: 'Sports', image: '702829757_1510035727491357_8836878289690218027_n.jpg', description: 'Athletes showcase teamwork and excellence at AIU sports festivals.' },
+  { title: 'International Day', category: 'Culture', image: '549875428_1315403033621295_2683189752059167520_n.jpg', description: 'Cultural performances and global community celebrations campus-wide.' },
 ];
 
 export const pressReleases = [
