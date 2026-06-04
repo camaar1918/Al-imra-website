@@ -34,16 +34,15 @@ export default function CinematicHero({ stats }) {
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover opacity-100"
-        >
-          <source src="/cusub/SAX AL IMRA.mp4" type="video/mp4" />
-        </video>
+        <iframe
+        cotrol="0"
+          src="https://www.youtube.com/embed/xZCklqCQfUA?autoplay=1&mute=1&controls=0&loop=1&playlist=xZCklqCQfUA&playsinline=1&rel=0&modestbranding=1&showinfo=0"
+          title="AIU cinematic background"
+          className="absolute inset-0 h-full w-full scale-150 opacity-100"
+          style={{ opacity: 1 }}
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen={false}
+        />
         <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/30 to-black/70" />
         <div className="absolute inset-0 bg-linear-to-r from-black/35 via-black/10 to-black/55" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_30%)]" />
