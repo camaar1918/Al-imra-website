@@ -6,18 +6,11 @@ import Button from '../ui/Button';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import Particles from '../ui/Particles';
 
-
-const VIDEOS = [
-  '/assets/SAX AL IMRA.mp4',
-];
-
 const headlines = ['Excellence', 'Innovation', 'Global Impact'];
 
 export default function CinematicHero({ stats }) {
-  const containerRef = useRef(null);
-  const videoRef = useRef(null);
-  const [videoIndex, setVideoIndex] = useState(0);
   const [headlineIdx, setHeadlineIdx] = useState(0);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
@@ -26,14 +19,6 @@ export default function CinematicHero({ stats }) {
     const interval = setInterval(() => setHeadlineIdx((i) => (i + 1) % headlines.length), 3500);
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    const vid = videoRef.current;
-    if (!vid) return;
-    const onEnd = () => setVideoIndex((i) => (i + 1) % VIDEOS.length);
-    vid.addEventListener('ended', onEnd);
-    return () => vid.removeEventListener('ended', onEnd);
-  }, [videoIndex]);
 
   useEffect(() => {
     gsap.from('.hero-stat', { opacity: 0, y: 40, stagger: 0.15, duration: 1, delay: 0.8, ease: 'power3.out' });
@@ -48,22 +33,26 @@ export default function CinematicHero({ stats }) {
 
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0 z-0">
+      <motion.div style={{ y }} className="absolute inset-0 z-0 overflow-hidden">
         <video
-          ref={videoRef}
-          key={videoIndex}
           autoPlay
           muted
+          loop
           playsInline
-          className="h-full w-full object-cover scale-105"
-          src={VIDEOS[videoIndex]}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--hero-overlay)] via-[var(--hero-overlay)] to-[var(--bg-primary)]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-aiu-dark/80 via-transparent to-aiu-dark/60 dark:from-aiu-dark/80 light:from-white/70" />
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover opacity-100"
+        >
+          <source src="/cusub/SAX AL IMRA.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/30 to-black/70" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/35 via-black/10 to-black/55" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_30%)]" />
       </motion.div>
 
-      <Particles count={35} />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--bg-primary)_75%)] z-[1]" />
+      <Particles count={30} />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--bg-primary)_75%)] z-1" />
+
+      <div className="absolute right-6 top-6 z-10 rounded-full border border-white/15 bg-black/25 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-white/90 shadow-lg backdrop-blur-md">AIU • Global Campus</div>
 
       <motion.div style={{ opacity }} className="relative z-10 mx-auto max-w-7xl px-4 pt-32 pb-36 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -77,7 +66,7 @@ export default function CinematicHero({ stats }) {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-aiu-green opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-aiu-green" />
               </span>
-              Admissions Open 2026–2027
+              AIU Admissions 2026–2027 • Global Campus
             </motion.div>
 
             <motion.h1
@@ -106,7 +95,7 @@ export default function CinematicHero({ stats }) {
               transition={{ delay: 0.35 }}
               className="mt-6 text-lg md:text-xl text-theme-secondary max-w-xl leading-relaxed"
             >
-              Al-Imra International University — a cinematic journey through world-class education, cutting-edge research labs, and a vibrant global campus.
+              Al-Imra International University delivers world-class education, advanced research, and an internationally connected campus experience designed for future leaders.
             </motion.p>
 
             <motion.div
@@ -115,9 +104,9 @@ export default function CinematicHero({ stats }) {
               transition={{ delay: 0.5 }}
               className="mt-10 flex flex-wrap gap-4"
             >
-              <Button to="/apply">Apply Now <ArrowRight className="h-4 w-4" /></Button>
+              <Button to="/apply">Apply Today <ArrowRight className="h-4 w-4" /></Button>
               <Button to="/about" variant="outline">
-                <Play className="h-4 w-4" /> Virtual Tour
+                <Play className="h-4 w-4" /> Explore Campus
               </Button>
             </motion.div>
           </div>
@@ -129,9 +118,9 @@ export default function CinematicHero({ stats }) {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative animate-float">
-              <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-aiu-green via-aiu-blue to-aiu-gold blur-3xl opacity-50" />
-              <div className="relative glass-strong rounded-full p-6 glow-green">
-                <img src="/aiu-logo.png" alt="AIU" className="h-48 w-48 md:h-64 md:w-64" />
+              <div className="absolute -inset-10 rounded-full bg-linear-to-r from-aiu-green/40 via-aiu-blue/30 to-aiu-gold/35 blur-3xl opacity-70" />
+              <div className="relative rounded-full border border-white/10 bg-white/8 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur-md">
+                <img src="/aiu-logo.png" alt="AIU" className="h-48 w-48 md:h-64 md:w-64 drop-shadow-[0_18px_30px_rgba(0,0,0,0.35)]" />
               </div>
             </div>
           </motion.div>

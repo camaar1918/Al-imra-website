@@ -22,12 +22,12 @@ export const testimonials = [
 export const partners = ['UNESCO', 'WHO', 'Microsoft', 'Google', 'IBM', 'African Union', 'UNICEF', 'World Bank'];
 
 export const newsArticles = [
-  { title: 'AIU Opens State-of-the-Art Innovation Hub', excerpt: 'A $12M facility featuring AI labs, maker spaces, and startup incubation.', date: '2026-03-15', category: 'Campus', image: '698572836_1504960891332174_3910699002171865887_n.jpg' },
-  { title: 'AIU Ranks Top 5 in East Africa Research Output', excerpt: 'New Times Higher Education rankings recognize breakthrough publications.', date: '2026-02-28', category: 'Achievement', image: '549875428_1315403033621295_2683189752059167520_n.jpg' },
-  { title: 'International Research Summit 2026 Announced', excerpt: '500+ scholars from 40 countries expected this September.', date: '2026-02-10', category: 'Events', image: '704387125_1510035394158057_6340997906428434280_n.jpg' },
-  { title: 'New Scholarship Program for STEM Students', excerpt: 'Full tuition scholarships for 200 outstanding applicants.', date: '2026-01-20', category: 'Admissions', image: '702829757_1510035727491357_8836878289690218027_n.jpg' },
-  { title: 'AIU Medical Students Win National Competition', excerpt: 'Team excels in clinical skills championship.', date: '2025-12-05', category: 'Students', image: '705989646_1510035814158015_7290969442126255545_n.jpg' },
-  { title: 'Partnership with Google for Cloud Education', excerpt: 'Students gain access to professional certifications.', date: '2025-11-18', category: 'Partnership', image: '704387125_1510035394158057_6340997906428434280_n.jpg' },
+  { title: 'Ababaar Ku Saabsan Diyaargarowga Imtixaannada iyo Doorashada Kulliyadaha', excerpt: 'Maanta waxaa ardayda Dugsiga Sare ee Amoud loo qabtay tababar muhiim ah oo uu bixiyey Agaasimaha Xafiiska Cilmi-baarista ee Jaamacadda. Tababarka ayaa diiradda lagu saaray sidii ardaydu ugu diyaargarobi lahaayeen imtixaannada dugsiga sare iyo talooyin ku saabsan doorashada kulliyadda ku habboon.', date: '2026-03-15', category: 'Campus', image: 'cusub/705647859_1512474270580836_5039533906857507085_n.jpg' },
+  { title: 'Mustaqbal Guuleysta Wuxuu Ka Bilowdaa Diyaar-garow Wanaagsan', excerpt: 'Mustaqbal guuleysta wuxuu ka bilowdaa diyaar-garow wanaagsan iyo doorasho sax ah. Waxaan u rajaynaynaa dhammaan ardayda guul iyo horumar joogto ah.', date: '2026-02-28', category: 'Achievement', image: 'cusub/706217781_1512474470580816_8591599088662927678_n.jpg' },
+  { title: 'Mustaqbal Guuleysta Wuxuu Ka Bilowdaa Diyaar-garow Wanaagsan', excerpt: 'Mustaqbal guuleysta wuxuu ka bilowdaa diyaar-garow wanaagsan iyo doorasho sax ah. Waxaan u rajaynaynaa dhammaan ardayda guul iyo horumar joogto ah.', date: '2026-02-28', category: 'Achievement', date: '2026-02-10', category: 'Events', image: 'cusub/707270208_1512474450580818_2283875810507704961_n.jpg' },
+  { title: 'jaamacadda Caalamiga ah ee Al-Imra oo Ka Qayb Gashay ASUS Cup', excerpt: 'Jaamacadda Caalamiga ah ee Al-Imra waxay ka qayb gashay ASUS Cup iyada oo noqotay jaamacadda ku hardamay koobka kuwa ugu wacnaa, taasoo muujineysa heerka sare ee tartanka iyo waxbarashada.', image: 'cusub/519678371_1268743008287298_4486216156847314950_n.jpg' },
+  { title: 'jaamacadda Caalamiga ah ee Al-Imra oo Ka Qayb Gashay ASUS Cup', excerpt: 'Jaamacadda Caalamiga ah ee Al-Imra waxay ka qayb gashay ASUS Cup iyada oo noqotay jaamacadda ku hardamay koobka kuwa ugu wacnaa, taasoo muujineysa heerka sare ee tartanka iyo waxbarashada.', image: 'cusub/520584344_1268742854953980_3950376926409145635_n.jpg' },
+  { title: 'jaamacadda Caalamiga ah ee Al-Imra oo Ka Qayb Gashay ASUS Cup', excerpt: 'Jaamacadda Caalamiga ah ee Al-Imra waxay ka qayb gashay ASUS Cup iyada oo noqotay jaamacadda ku hardamay koobka kuwa ugu wacnaa, taasoo muujineysa heerka sare ee tartanka iyo waxbarashada.', image: 'cusub/523006034_1268742984953967_5477296731346775917_n.jpg' },
 ];
 
 export const events = [
@@ -123,7 +123,7 @@ export const galleryItems = [
   {
     title: 'Class of 2025 Graduation',
     category: 'Ceremony',
-    image: '698572836_1504960891332174_3910699002171865887_n.jpg',
+    image: 'cusub/705647859_1512474270580836_5039533906857507085_n.jpg',
     description: 'Graduates from six faculties receive diplomas at the AIU graduation ceremony in May 2025.',
     year: '2025',
     graduates: '620+',
@@ -132,7 +132,7 @@ export const galleryItems = [
   {
     title: 'Graduation Parade',
     category: 'Ceremony',
-    image: '549875428_1315403033621295_2683189752059167520_n.jpg',
+    image: 'cusub/707210011_1512474153914181_1814435959598679040_n.jpg',
     description: 'Students march through campus in academic regalia, celebrating degree completion with family and faculty.',
     year: '2025',
     graduates: '620+',
@@ -141,17 +141,19 @@ export const galleryItems = [
   {
     title: 'Diploma Presentation',
     category: 'Ceremony',
-    image: '704387125_1510035394158057_6340997906428434280_n.jpg',
+    image: 'cusub/705809580_1512474527247477_1290820130092913096_n.jpg',
     description: 'AIU leaders award diplomas to graduates from Computer Science, Health Sciences, Law, Education and more.',
     year: '2025',
     graduates: '620+',
     venue: 'Graduation Hall',
   },
-  { title: 'Campus Aerial', category: 'Campus', image: '698572836_1504960891332174_3910699002171865887_n.jpg', description: 'Aerial view of the AIU campus with modern facilities and green open spaces.' },
-  { title: 'Student Life', category: 'Life', image: '704387125_1510035394158057_6340997906428434280_n.jpg', description: 'Vibrant student community events, clubs, and cultural celebrations.' },
-  { title: 'Library', category: 'Academic', image: '705989646_1510035814158015_7290969442126255545_n.jpg', description: 'Quiet study zones and digital learning resources for academic success.' },
-  { title: 'Sports Day', category: 'Sports', image: '702829757_1510035727491357_8836878289690218027_n.jpg', description: 'Athletes showcase teamwork and excellence at AIU sports festivals.' },
-  { title: 'International Day', category: 'Culture', image: '549875428_1315403033621295_2683189752059167520_n.jpg', description: 'Cultural performances and global community celebrations campus-wide.' },
+  { title: 'Campus Aerial', category: 'Campus', image: 'cusub/519678371_1268743008287298_4486216156847314950_n.jpg', description: 'Aerial view of the AIU campus with modern facilities and green open spaces.' },
+  { title: 'Student Life', category: 'Life', image: 'cusub/530109646_1283102800184652_7537220105886007926_n.jpg', description: 'Vibrant student community events, clubs, and cultural celebrations.' },
+  { title: 'Library', category: 'Academic', image: 'cusub/706527086_1512474663914130_867283325151797732_n.jpg', description: 'Quiet study zones and digital learning resources for academic success.' },
+  { title: 'Sports Day', category: 'Sports', image: 'cusub/707022877_1512474740580789_7993113023512020302_n.jpg', description: 'Athletes showcase teamwork and excellence at AIU sports festivals.' },
+  { title: 'International Day', category: 'Culture', image: 'cusub/714775287_1520005746494355_3987019542865175851_n.jpg', description: 'Cultural performances and global community celebrations campus-wide.' },
+  { title: 'Campus Gallery', category: 'Campus', image: 'cusub/520584344_1268742854953980_3950376926409145635_n.jpg', description: 'A refined campus moment from the AIU media archive.' },
+  { title: 'Learning Moment', category: 'Learning', image: 'cusub/523006034_1268742984953967_5477296731346775917_n.jpg', description: 'An academic snapshot from the newest AIU gallery collection.' },
 ];
 
 export const pressReleases = [

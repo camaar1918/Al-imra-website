@@ -68,7 +68,7 @@ export default function Media() {
             <div className="space-y-4 max-w-3xl mx-auto">
               {eventList.map((e, i) => (
                 <motion.div key={e.title || i} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass rounded-2xl p-5 flex gap-4 items-center">
-                  <div className="rounded-xl bg-aiu-blue/20 px-4 py-3 text-center min-w-[72px]">
+                  <div className="rounded-xl bg-aiu-blue/20 px-4 py-3 text-center min-w-18">
                     <p className="text-xl font-bold text-aiu-gold">{new Date(e.startDate || e.date).getDate()}</p>
                     <p className="text-[10px] uppercase text-theme-muted">{new Date(e.startDate || e.date).toLocaleString('default', { month: 'short' })}</p>
                   </div>
@@ -88,7 +88,7 @@ export default function Media() {
                 <motion.div key={g.title} whileHover={{ y: -6 }} className="glass rounded-3xl overflow-hidden shadow-xl">
                   <div className="relative h-72 overflow-hidden">
                     <img src={`/${g.image}`} alt={g.title} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
                     <span className="absolute left-4 top-4 rounded-full bg-aiu-green/90 px-3 py-1 text-[11px] font-semibold uppercase text-white">{g.category}</span>
                     <div className="absolute bottom-4 left-4 right-4">
                       <p className="text-lg font-semibold text-white leading-snug">{g.title}</p>
@@ -113,7 +113,7 @@ export default function Media() {
             <div className="grid md:grid-cols-2 gap-6">
               {videos.map((v) => (
                 <div key={v.title} className="glass rounded-2xl overflow-hidden group cursor-pointer">
-                  <div className="aspect-video bg-gradient-to-br from-aiu-dark to-aiu-blue/40 flex items-center justify-center relative">
+                  <div className="aspect-video bg-linear-to-br from-aiu-dark to-aiu-blue/40 flex items-center justify-center relative">
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
                     <Play className="h-14 w-14 text-white relative z-10 group-hover:scale-110 transition-transform" />
                   </div>

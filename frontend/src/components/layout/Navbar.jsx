@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
@@ -42,12 +42,23 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [dropdown, setDropdown] = useState(null);
+  const lastYRef = useRef(0);
   const { toggleTheme, isDark } = useTheme();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const goingDown = currentY > lastYRef.current;
+      setScrolled(currentY > 10);
+      setHidden(goingDown && currentY > 70);
+      lastYRef.current = currentY;
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -55,7 +66,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'glass-strong py-2 shadow-lg' : 'bg-transparent py-4'
-      }`}
+      } ${hidden && !open ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100 pointer-events-auto'}`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-3">
